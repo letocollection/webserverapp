@@ -10,19 +10,40 @@
 
 var http = require('http');
 
+
+
 //ALWAYS GO ABOVE PORT 1024. 
-var PORT = 8080;
+var PORT1 = 7500;
+var PORT2 = 7000;
 
 
 //THIS CREATES A SERVER
-function handleRequest(request, response){
-	response.end('It works!! Path Hit: ' + request.url);
+function handleRequest1(request, response){
+	response.end('You freakin suck! ' + request.url);
 }
 
-var server = http.createServer(handleRequest);
+var server1 = http.createServer(handleRequest1);
 
 //THIS CALLS THE SERVER
-server.listen(PORT, function(){
-	console.log("Server listening on: http://localhost:%s", PORT);
+server1.listen(PORT1, function(){
+	console.log("Server listening on: http://localhost:%s", PORT1);
+});
+
+// var http = require('http');
+
+
+
+
+
+//THIS CREATES A SERVER
+function handleRequest2(request, response){
+	response.end('You are the shit!' + request.url);
+}
+
+var server2 = http.createServer(handleRequest2);
+
+//THIS CALLS THE SERVER
+server2.listen(PORT2, function(){
+	console.log("Server listening on: http://localhost:%s", PORT2);
 });
 
